@@ -1,0 +1,47 @@
+<header class="home_header">
+	<img src="{{rootURL}}/assets/img/logo_ssi_header.svg" style="margin:10px; margin-left:20px" height="40px" alt="logo empresa">
+	<nav>
+		<ul id="menu-favorito">
+			{{#each model.menu as |menu|}}
+				{{#if menu.favorito}}
+					<li>
+						{{#link-to menu.lnk}} 
+							{{menu.label}}
+						{{/link-to}}
+					</li>
+				{{else}}
+				
+				{{/if}}
+			{{/each}}
+		</ul>
+		<div class="icons_header">				
+			<li>
+			<img src="{{rootURL}}/assets/img/login_user_image.png" alt="clic para abrir opciones de perfil" style="height=20px; vertical-align:middle; margin=20px;" class="user_home_photo"><br>
+			</li>
+			<li class="lblUserName">
+				{{model.user.login}}
+			</li>
+			<li>{{fa-icon "cog" size=2}}<a href=""></a></li>
+		</div>
+		<i class="fa fa-angle-double-down fa-2x" {{action "showMenu"}}></i>
+		<div id="main-menu">
+			<nav>
+				<ul>
+					{{#each model.menu as |menu|}}
+						{{#if menu.label}}
+							{{#unless menu.parentid}}
+								<li class="papa">{{menu.label}}</li>
+							{{else}}
+								{{item-menu item=menu}}
+							{{/unless}}
+						{{else}}
+						{{/if}}
+					{{/each}}
+				</ul>
+			</nav>
+		</div>
+		<div>
+			<button {{action "logout"}}>Salir</button>
+		</div>
+	</nav>
+</header>
