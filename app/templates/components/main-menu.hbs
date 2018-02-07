@@ -25,20 +25,9 @@
 		</div>
 		<i class="fa fa-angle-double-down fa-2x" {{action "showMenu"}}></i>
 		<div id="main-menu">
-			<nav>
-				<ul>
-					{{#each model.menu as |menu|}}
-						{{#if menu.label}}
-							{{#unless menu.parentid}}
-								<li class="papa">{{menu.label}}</li>
-							{{else}}
-								{{item-menu item=menu}}
-							{{/unless}}
-						{{else}}
-						{{/if}}
-					{{/each}}
-				</ul>
-			</nav>
+			{{#each model.menu as |menu|}}
+				{{item-menu item=menu}}
+			{{/each}}
 		</div>
 		<div>
 			<button {{action "logout"}}>Salir</button>

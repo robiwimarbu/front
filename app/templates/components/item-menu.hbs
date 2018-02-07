@@ -1,1 +1,17 @@
-<li>{{item.label}}</li>
+{{#unless item._lnk}}
+	<h3>{{item.label}}</h3>
+	<div>
+		{{#each item.items as |child|}}
+			<h3>---{{child.label}}</h3>
+			<div>
+				{{#unless child._lnk}}
+					{{item-menu item=child}}
+				{{else}}
+				{{/unless}}				
+			</div>
+		{{/each}}		
+	</div>
+{{else}}
+	<h3>{{item.label}}</h3>
+{{/unless}}
+

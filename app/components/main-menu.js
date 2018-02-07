@@ -3,7 +3,7 @@ import { inject } from '@ember/service';
 import ENV from '../config/environment';
 import $ from 'jquery';
 export default Component.extend({
-	session: inject('session'),	
+	session: inject('session'),
 	actions:{
 		logout(){
 			this.get('session').invalidate();

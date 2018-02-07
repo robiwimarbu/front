@@ -437,7 +437,15 @@ box-shadow: -1px 4px 8px -2px rgba(0,0,0,0.52);
     box-sizing: border-box;
     vertical-align: middle;
 }
-
+.nav2{
+	display:table;
+	border:1px;
+	background-color:#777;
+}
+.nav2 li{
+	display: block;
+    float: none;
+}
 .lblUserName{
 	line-height: 52px;
     margin: 0.2em;

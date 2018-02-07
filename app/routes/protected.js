@@ -41,10 +41,11 @@ function CrearMenu(data){
 	data.forEach(function(item){
 		var label = item.text;
 		var favorito = item.favorito;
-		var parentid = item.parentid == 0 ? null : item.parentid;
+		var parentid = item.parentid == 0 ? undefined : item.parentid;
+		var _lnk = item["lnk"] == "" ? undefined : item["lnk"];
 		var id = item.id;
 		if (items[parentid]) {
-			var item = { parentid: parentid, label: label, item: item, favorito: favorito };
+			var item = { parentid: parentid, label: label, item: item, favorito: favorito,_lnk:_lnk };
 			if (!items[parentid].items) {
 				items[parentid].items = [];
 			}
@@ -52,7 +53,7 @@ function CrearMenu(data){
 			items[id] = item;
 		}
 		else {
-			items[id] = { parentid: parentid, label: label, item: item,favorito:favorito };
+			items[id] = { parentid: parentid, label: label, item: item,favorito:favorito,_lnk:_lnk };
 			source[id] = items[id];
 		}
 	});	  
