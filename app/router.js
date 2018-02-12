@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('login');
   this.route('protected');
   this.route('usuarios');
+  this.route('preguntasg');
 });
 
 export default Router;

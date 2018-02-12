@@ -18,16 +18,15 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
 				url: ENV.SERVER_API+"/api/auth/menu",
 			}).then(function (result) {
 				var items = CrearMenu(result);
-				var user={};
-				user['login'] = cookie_higia.lgn;
 				var obj ={};
-				obj["menu"] = items;
-				obj["user"]= user;
+				obj["menu"] = items["source"];
+				obj["mfav"] = items["fav"];
+				obj["user"]= cookie_higia;
+				obj["url_fto_usro"] = ENV.SERVER_API+"/static/img/"+cookie_higia.fto_usro;
 				return  obj;
 			}).catch(function(error){
 				return null;
 			});
-			
 			return menu;
 		}
 		return null;
@@ -37,15 +36,20 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
 function CrearMenu(data){
     var source = [];
     var items = [];
-    var a = []
+	var result ={};
+	var favoritos=[];
 	data.forEach(function(item){
 		var label = item.text;
-		var favorito = item.favorito;
-		var parentid = item.parentid == 0 ? undefined : item.parentid;
-		var _lnk = item["lnk"] == "" ? undefined : item["lnk"];
+		var favorito = item.favorito == false ? null: item.favorito;
+		var parentid = item.parentid == 0 ? null : item.parentid;
+		var _lnk = item["lnk"] == "" ? null : item["lnk"];
 		var id = item.id;
+		if(favorito){
+			var item_favorito = { parentid: parentid, id:id, label: label, item: item, _lnk:_lnk };
+			favoritos[favoritos.length] = item_favorito;
+		}
 		if (items[parentid]) {
-			var item = { parentid: parentid, label: label, item: item, favorito: favorito,_lnk:_lnk };
+			var item = { parentid: parentid, id:id, label: label, item: item,_lnk:_lnk };
 			if (!items[parentid].items) {
 				items[parentid].items = [];
 			}
@@ -53,11 +57,13 @@ function CrearMenu(data){
 			items[id] = item;
 		}
 		else {
-			items[id] = { parentid: parentid, label: label, item: item,favorito:favorito,_lnk:_lnk };
+			items[id] = { parentid: parentid, id:id, label: label, item: item,_lnk:_lnk };
 			source[id] = items[id];
 		}
-	});	  
-  return source
+	});	
+	result["fav"] =  favoritos;
+	result["source"] = source;
+  return result;
 }
 
 function buildUL(items) {

@@ -7,11 +7,13 @@ export default Component.extend({
 	actions:{
 		logout(){
 			this.get('session').invalidate();
-			//this.get('router').transitionTo('login');
 			window.location.href='/login';
 		},
 		showMenu(){
 			$('#main-menu').toggleClass("showMenu");
+		},
+		showConf(){
+			$('#user_id').toggleClass("showConf");
 		}
 	}
 });

@@ -1,17 +1,22 @@
 {{#unless item._lnk}}
-	<h3>{{item.label}}</h3>
-	<div>
-		{{#each item.items as |child|}}
-			<h3>---{{child.label}}</h3>
-			<div>
+	<!--SI es un padre !-->
+	<div class="tab">
+		<input id="tab-{{item.id}}" type="checkbox" name="tabs">
+		<label for="tab-{{item.id}}">{{item.label}}</label>
+		<div class="tab-content">
+			{{#each item.items as |child|}}
 				{{#unless child._lnk}}
-					{{item-menu item=child}}
+					<div class="half">
+						{{item-menu item=child}}
+					</div>
 				{{else}}
+					<div>{{child.label}}</div>
 				{{/unless}}				
-			</div>
-		{{/each}}		
+			{{/each}}		
+		</div>
 	</div>
 {{else}}
-	<h3>{{item.label}}</h3>
+	<!--SI No es un padre !-->
+	<div>{{item.label}}</div>
 {{/unless}}
 
