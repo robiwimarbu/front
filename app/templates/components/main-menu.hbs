@@ -19,7 +19,6 @@
 			</li>
 			<li {{action "showConf"}}>{{fa-icon "cog" size=2}}<a href=""></a></li>
 		</div>
-		<i class="fa fa-angle-double-down fa-2x" {{action "showMenu"}}></i>
 		<div id="main-menu">
 			<div class="half">
 				{{#each model.menu as |menu|}}
@@ -28,6 +27,7 @@
 			</div>
 		</div>
 	</nav>
+	<i class="fa fa-angle-double-down fa-2x" {{action "showMenu"}}></i>
 </header>
 <aside id="user_id">
 	<div id="user_info">
