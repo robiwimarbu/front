@@ -1,8 +1,8 @@
 <header class="login_header">
 	<img class="logo_header" src="{{rootURL}}/assets/img/logo_ssi_header.png" alt="logo ssi">
 </header>
-<article>
-	<form {{action 'authenticate' on='submit'}}>
+<div class="containerLogin">
+	<form class="login_form" {{action 'authenticate' on='submit'}}>
 		<img id="user_photo" class="login_user_photo" src="{{rootURL}}/assets/img/login_user_image.png" alt="user photo">						
 		<h2>Inicio de Sesión</h2>			
 		<label for="username">Login</label>
@@ -18,7 +18,7 @@
 			<code>{{errorMessage}}</code>
 		</p>
 	{{/if}}
-</article>
+</div>
 <footer class="footerlogin">
 	<img src="{{rootURL}}/assets/img/logo_higia_negativo.png" width="200"alt="user photo">
 </footer>

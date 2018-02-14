@@ -1,7 +1,18 @@
-{{#if session.isAuthenticated}}
-{{main-menu model=model}}
-{{/if}}
-<article>			
-</article>
-<footer class="footer_home"><img src="{{rootURL}}/assets/img/logo_higia.png" height=30px;  alt="logo higia">&nbsp;&nbsp;&nbsp;<br><cite>HIGIA-SSI® Todos los derechos reservados </cite>
-</footer>
+<div class="container">
+<form>
+  <div class="form-group">
+    <label>Nombre Completo</label>
+	{{input class="form-control" name="nmbre_cmplto" value=model.nmbre_cmplto placeholder="Nombre Completo"}}
+  </div>
+  <div class="form-group">
+    <label>Usuario</label>
+	{{input class="form-control" name="usro" value=model.usro placeholder="usro"}}
+  </div>
+  <div class="form-group">
+    <label>Contraseña</label>
+    {{input type="password" class="form-control" name="cntrsna" placeholder="Password"}}
+    <p class="help-block">La Contraseña debe Contener almenos 8 caracteres.</p>
+  </div>
+  <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+</div>

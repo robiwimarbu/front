@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 
 *{
-box-sizing:border-box;
--webkit-box-sizing:border-box;
-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	moz-box-sizing:border-box;
+}
+
+.blankSpaceTop{
+	height:30px;
+}
+
+.blankSpaceBotton{
+	height:78px;
 }
 
 .bg_login{ /*Div del background del Login*/
@@ -53,9 +61,8 @@ webkit-border-radius : 1281px 1281px 0px 0px  / 0px;
 }
 
 #main-menu{
-position:relative;
+position:absolute;
 margin-top:58px;
-margin-right:-50px;
 max-width:450px;
 width:450px;
 max-height:300px;
@@ -67,6 +74,7 @@ overflow:scroll;
 transition: visibility 0s, opacity 0.5s linear;
 opacity: 0;
 visibility: hidden;
+z-index: 1;
 }
 .showMenu{
 visibility: visible !important;
@@ -94,7 +102,7 @@ transition: hidden 0s, opacity 0.5s linear !important;
 }
 
 
-article{
+.containerLogin{
 width:100%;
 display: inline-block;
 margin:auto;
@@ -104,6 +112,7 @@ padding:auto;
 padding-top: 3%;
 background-color: transparent;
 }
+
 #bg_login article {
 padding: 30px;
 margin-top: 50px;
@@ -152,7 +161,7 @@ webkit-box-sizing: border-box;
 
 
 
-form{  /*Estilos formulario de logueo*/
+.login_form{  /*Estilos formulario de logueo*/
 margin: auto;
 text-align:left;
 display:inline-block;
@@ -171,8 +180,8 @@ webkit-box-sizing: border-box;
 
 }
 
-
-input{ /*Estilos de las cajas de texto*/
+/*Estilos de las cajas de texto*/
+/*input{ 
 display:inline-block;
 border-top: none;
 border-right: none;
@@ -183,7 +192,7 @@ height : 27px;
 margin-bottom:30px;
 box-sizing: border-box;
 web-kit-box-sizing: border-box;
-}
+}*/
 
 
 .button_login:enabled  /*Estilos de boton del login y los formularios de recuperacion de contraseña activado*/
@@ -544,8 +553,6 @@ float: left;
 
 }
 
-
-
 .user_home_photo {
 width: 60px;
 height: 60px;
@@ -659,7 +666,7 @@ margin:0px !important;
 
 
 #user_id {
-	visibility: hidden;	;
+	visibility: hidden;
 	-moz-box-sizing:border-box;
 	-web-kit-box-sizing:border-box;
 	position: absolute;
@@ -866,3 +873,4 @@ input[type=radio] + label::after {
 	}
 	
 }
+

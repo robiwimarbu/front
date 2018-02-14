@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('protected');
   this.route('usuarios');
   this.route('preguntasg');
+  this.route('perfiles');
 });
 
 export default Router;
