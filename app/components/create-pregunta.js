@@ -32,7 +32,7 @@ export default Ember.Component.extend(formValidation,{
       }
       formData.append('cdgo', frmData.cdgo);
       formData.append('dscrpcn', frmData.dscrpcn);
-	  formData.append('id_mnu_ge',"798");
+	  formData.append('id_mnu_ge',"330");
       let{access_token,cookie_higia} = this.get('session.data.authenticated');
       Ember.$.ajax({
         data: formData,

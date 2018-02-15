@@ -1,0 +1,18 @@
+<button onclick={{action "mostrar_ventana" "actualizar" }}>Actualizar</button>
+{{#bs-modal open=modal1 onHidden=(action (mut modal1) false) as |modal|}}
+  {{#modal.header}}
+    <h4 class="modal-title">
+      Custom Dialog
+      <div class="badge">2</div>
+    </h4>
+  {{/modal.header}}
+  {{#modal.body}}
+	<input type="text" autofocus="autofocus" value="{{record.cdgo}}">
+    <input type="text" autofocus="autofocus" value="{{record.dscrpcn}}">
+  {{/modal.body}}
+  {{#modal.footer}}
+    {{#bs-button onClick=(action modal.close)}}Cancel{{/bs-button}}
+    {{#bs-button type="danger"}}Delete{{/bs-button}}
+    {{#bs-button type="success" onClick=(action modal.submit)}}Save{{/bs-button}}
+  {{/modal.footer}}
+{{/bs-modal}}

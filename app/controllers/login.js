@@ -49,6 +49,11 @@ export default EmberController.extend({
 			}else{
 				$('#user_photo').attr('src', '/assets/img/login_user_image.png');
 			}
+			 //verificar si la imagen es cargada de forma correcta sino se mantiene la imagen default
+			var imgUser = $('#user_photo')[0];
+			imgUser.onerror = function(){
+				$('#user_photo').attr('src', '/assets/img/login_user_image.png');
+			}
 		}
 	}
 });

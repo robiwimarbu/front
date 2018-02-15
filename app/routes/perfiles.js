@@ -26,6 +26,7 @@ export default Route.extend({
 			var columns = [{"propertyName":"cdgo","title" :"Código"},
 				{"propertyName":"dscrpcn","title" :"Descripción"},
 				{"propertyName":"estdo","title" :"Estado"},
+				{"title": "Modificar","component": "editRow","editable": false},
 			];
 			obj["columns"] = columns;
 			return obj;
