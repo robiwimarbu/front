@@ -10,8 +10,12 @@
 						{{item-menu item=child}}
 					</div>
 				{{else}}
-					<div>{{child.label}}</div>
-				{{/unless}}				
+					<div>
+						{{#link-to child.enlace}} 
+							{{child.label}}
+						{{/link-to}}
+					</div>
+				{{/unless}}			
 			{{/each}}		
 		</div>
 	</div>

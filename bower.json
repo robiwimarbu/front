@@ -1,6 +1,7 @@
 {
   "name": "front-ssi",
   "dependencies": {
-    "jquery-ui": "1.11.4"
+    "jquery-ui": "1.11.4",
+    "light-validate-js": "^0.0.1-beta.2"
   }
 }

@@ -28,7 +28,6 @@ export default Route.extend({
 				{"propertyName":"estdo","title" :"Estado"},
 			];
 			obj["columns"] = columns;
-			console.log(obj);
 			return obj;
 		})
 	}

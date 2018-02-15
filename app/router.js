@@ -12,6 +12,8 @@ Router.map(function() {
   this.route('usuarios');
   this.route('preguntasg');
   this.route('perfiles');
+  this.route('create-pregunta');
+  this.route('update-pregunta');
 });
 
 export default Router;
